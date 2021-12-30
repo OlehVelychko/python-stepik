@@ -1,0 +1,11 @@
+city = input()
+street = input()
+house = int, input()
+ap = int(input())
+print(f"г. {city}, ул. {street}, д. {house}, кв. {ap}")
+
+# city = input()
+# street = input()
+# house_number = int(input())
+# flat_number = int(input())
+# print(f'г. {city}, ул. {street}, д. {house_number}, кв. {flat_number}')
