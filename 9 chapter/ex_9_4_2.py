@@ -7,23 +7,37 @@
 # res = filter(lambda x: x % 2 == 0, dubl)
 # print(*sorted(res))
 
-mails = list(map(str, input().split()))
+mails = input().split()
 from string import ascii_letters
 
+adress = ascii_letters + '1234567890 @.'
 
-def validate(mail):
+
+def validate_one(mail):
     for x in mail:
-        if '@' in x:
-            for y in x:
-                if '1' in y:
-
-                    return y
-            # return all(map(lambda c: c in ascii_letters or c in '1234567890', mail))
+        if x == '@':
+            for y in mail[mail.index(x) + 1::]:
+                if y == '.':
+                    return True
 
 
-# def filter(arr):
-#     for x in arr:
-#         if is
+def validate_two(mail):
+    mails = []
+    if validate_one(mail):
+        for x in mail:
+            if x not in adress:
+                # print(x)
+                break
 
-res = filter(validate, mails)
-print(*res)
+            mails.append(mail)
+
+    return mails
+
+
+res_3 = filter(validate_two, mails)
+for i in res_3:
+    print(i, end=' ')
+
+
+# test = validate_two('$fg9@fd.com')
+# print(test)

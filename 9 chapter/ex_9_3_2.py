@@ -28,7 +28,15 @@
 # print(*map(lambda x: t.get(x, '-'), input().lower()), sep='')
 
 
-cities = input().split()
+# cities = input().split()
+#
+# ar = list(map(lambda x: x if len(x) > 5 else '-', cities))
+# print(*ar)
 
-ar = list(map(lambda x: x if len(x) > 5 else '-', cities))
-print(*ar)
+
+s = input()
+s_lst = s.split()
+
+tp = tuple(map(lambda x: tuple(x.split('=')), s_lst))
+
+print(tp)
